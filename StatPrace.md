@@ -18,9 +18,9 @@ V kódu je vždy uvedena cesta k datům, zpracování dat, převedení do grafů
 ### Je počet včelstev vysoký?
 Ze zkušenosti vím, že hodně starších včelařů má hodně včelstev, ale pro mě jako začátečníka jsou to jen jednotky. Za hranici bych považoval 10 včelstev, neboť to je počet, o kterém často slyším lidi mluvit a psát.
 Problém je trochu s datasetem, ten je relativně malý a nejsou volně dostupná data o jednotlivcích, takže braný průměr může dost zkreslovat naše měření
-Zkoumaná hypotéza je, že ročně se průměr pohybuje na deseti včelstev na včelaře.
+Zkoumaná hypotéza je, jestli se ročně průměr pohybuje na deseti včelstvech na včelaře.
 
-`p1_value = st.ttest_1samp(ratio, 10, alternative="greater").pvalue`
+`p1_value = st.ttest_1samp(beekeepers_beehives_per_year, 10, alternative="greater").pvalue`
 
 `print(p1_value)`
 

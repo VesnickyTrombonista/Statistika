@@ -47,6 +47,7 @@ ax1.set_xlabel('Rok')
 ax1.set_ylabel('Průměrný výnos')
 ax1.set_title('Průměrný výnos medu v kg na včelstvo')
 
+# Graf pro Vývoj počtu včelstev
 ax2.bar(years, beehives_counts, color='r')
 ax2.set_xlabel('Rok')
 ax2.set_ylabel('Počet včelstev')
@@ -65,24 +66,26 @@ plt.xticks(rotation=45)  # Otočení názvů let pro lepší čitelnost
 plt.tight_layout()
 plt.show()
 
-# zde se můžeme podívat na histogram udávající, kolik včelstev si v průměru udržuje jednotlivý včelař každý rok
+# Zde se můžeme podívat na histogram udávající, kolik včelstev si v průměru udržuje jednotlivý včelař každý rok
 plt.hist(average_honey_yield)
 plt.show()
 
 # Ze zkušenosti vím, že hodně starších včelařů má hodně včelstev, ale pro mě jako začátečníka jsou to jen jednotky
 # Budu používat α = 0.05
-# Nechť je hypotéza: Je produkce včelstva nízká?
-# a za hranici bych považoval 13 kg, protože se mi to zdá jako přiměřená produkce medu
+# Je produkce včelstva nízká?
+# Za hranici bych považoval 13 kg, protože se mi to zdá jako přiměřená produkce medu
 # Problém je trochu s datasetem, ten je relativně malý a nejsou volně dostupná data o jednotlivcích, takže 
-# braný průměr může dost zkreslovat naše měření
-# Takže hypotéza je, že ročně se průměr pohybuje na 13 kilogramech na včelstvo
+# braný průměr může dost zkreslovat naše měření.
+# Takže hypotéza je, že ročně se průměr pohybuje na 13 kilogramech na včelstvo.
 
 p1_value = st.ttest_1samp(average_honey_yield, 13, alternative="less").pvalue
 
 print(p1_value) # 0.7823446151002443 > 0.05
+
 # Jak vidíme, tak nulovou hypotézu nemůžeme zamítnout a podle výsledku můžeme předpokládat,
-# že v průměru se roční výnos na včelstvo pohybuje kolem 13 kg, dle těchto dat
+# že se v průměru roční výnos na včelstvo pohybuje kolem 13 kg (dle těchto dat).
+
 # Pozn. toto je ovšem zavádějící informace, protože různé literatury udávají výnos 15-28 kg na včelstvo
 # Problém bude v typu včelstev, které byly nahlášeny, protože z oddělků se většinou mnoho medu nevytočí
 # a zároveň se mohlo stát, že se někomu vyrojily včely, takže pak také tolik nevytočil tolik, proto 
-# reálná informace, že se vytočí kolem 20 kg na běžné včelstvo je přijatelná
+# reálná informace, že se vytočí kolem 20 kg na běžné včelstvo je přijatelná.

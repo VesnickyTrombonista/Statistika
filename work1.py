@@ -25,11 +25,11 @@ plt.tight_layout()
 # plt.show()
 
 # Výpočet poměru počtu včelstev na jednoho včelaře
-ratio = beehives_years_counts.astype(int) / beekeepers_years_counts.astype(int)
+beekeepers_beehives_per_year = beehives_years_counts.astype(int) / beekeepers_years_counts.astype(int)
 
 # Vytvoření grafu pro poměr
 plt.figure(figsize=(10, 6))
-plt.bar(years, ratio, color='g')
+plt.bar(years, beekeepers_beehives_per_year, color='g')
 plt.xlabel('Rok')
 plt.ylabel('Poměr počtu včelstev na jednoho včelaře')
 plt.title('Vývoj poměru počtu včelstev na jednoho včelaře')
@@ -38,18 +38,18 @@ plt.tight_layout()
 plt.show()
 
 # zde se můžeme podívat na histogram udávající, kolik včelstev si v průměru udržuje jednotlivý včelař každý rok
-plt.hist(ratio)
+plt.hist(beekeepers_beehives_per_year)
 plt.show()
 
 # Ze zkušenosti vím, že hodně starších včelařů má hodně včelstev, ale pro mě jako začátečníka jsou to jen jednotky
 # Budu používat α = 0.05
-# Nechť je hypotéza: Je počet včelstev vysoký?
+# Je počet včelstev vysoký?
 # a za hranici bych považoval 10 včelstev, neboť to je počet, o kterém často slyším lidi mluvit a psát
 # Problém je trochu s datasetem, ten je relativně malý a nejsou volně dostupná data o jednotlivcích, takže 
 # braný průměr může dost zkreslovat naše měření
-# Takže hypotéza je, že ročně se průměr pohybuje na deseti včelstev na včelaře
+# Takže hypotéza je, jestli se ročně průměr pohybuje na deseti včelstvech na včelaře.
 
-p1_value = st.ttest_1samp(ratio, 10, alternative="greater").pvalue
+p1_value = st.ttest_1samp(beekeepers_beehives_per_year, 10, alternative="greater").pvalue
 
 print(p1_value) # 0.01832389861421368 < 0.05
 # Jak vidíme, tak nulovou hypotézu můžeme zamítnout a prohlásit, že v průměru mají
