@@ -42,6 +42,6 @@ Zkoumaná hypotéza je, že ročně se průměr pohybuje na 13 kilogramech na v�
 
 `0.7823446151002443 > 0.05`
 
-Jak vidíme, tak nulovou hypotézu nemůžeme zamítnout a podle výsledku můžeme předpokládat, že v průměru se roční výnos na včelstvo pohybujkolem 13 kg, dle těchto dat
+Jak vidíme, tak nulovou hypotézu nemůžeme zamítnout a podle výsledku můžeme předpokládat, že v průměru se roční výnos na včelstvo pohybujkolem 13 kg. (dle těchto dat)
 
 Pozn. toto je ovšem zavádějící informace, protožrůzné literatury udávají výnos 15-28 kg na včelstvo. Problém bude v typu včelstev, které byly nahlášeny, protože z oddělků se většinou mnoho medu nevytočí a zároveň se mohlo stát, že se někomu vyrojily včely, takže pak také tolik nevytočil. Proto informace, že se vytočí kolem 20 kg na běžné včelstvo, je přijatelná.
