@@ -24,7 +24,7 @@ Zkoumaná hypotéza je, jestli se ročně průměr pohybuje na deseti včelstvec
 
 `print(p1_value)`
 
-`# 0.01832389861421368 < 0.05 `
+`0.01832389861421368 < 0.05 `
 
 Jak vidíme, tak nulovou hypotézu můžeme zamítnout a prohlásit, že v průměru mají včelaři po více než deseti včelstvech.
 
@@ -40,7 +40,7 @@ Zkoumaná hypotéza je, že ročně se průměr pohybuje na 13 kilogramech na v�
 
 `print(p1_value)`
 
-` # 0.7823446151002443 > 0.05`
+`0.7823446151002443 > 0.05`
 
 Jak vidíme, tak nulovou hypotézu nemůžeme zamítnout a podle výsledku můžeme předpokládat, že v průměru se roční výnos na včelstvo pohybujkolem 13 kg, dle těchto dat
 
