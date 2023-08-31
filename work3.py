@@ -1,26 +1,32 @@
 import pandas as pd
-from sklearn.linear_model import LinearRegression
+import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
 
-beekeepers = pd.read_csv('./vcelari.csv', sep=';')
+# Načtení CSV souboru do pandas DataFrame
+data = pd.read_csv("./vcelari.csv", delimiter=";")
 
-beekeepers_sorted = beekeepers.sort_values(by='Počet včelstev')
-# Rozdělení dat na sloupce
-beekeepers_years_counts = beekeepers_sorted['Počet včelařů'].values.reshape(-1, 1)
-beehives_years_counts = beekeepers_sorted['Počet včelstev'].values
+# Vybrání sloupců pro analýzu
+beekeepers = data["Počet včelařů"].values.reshape(-1, 1)
+beehives = data["Počet včelstev"].values
 
-# Inicializace a trénink modelu lineární regrese
-model = LinearRegression()
-model.fit(beekeepers, beehives_years_counts)
+# Inicializace a fitování lineární regrese
+regressor = LinearRegression()
+regressor.fit(beekeepers, beehives)
 
-# Predikce hodnot
-y_pred = model.predict(beekeepers_years_counts)
+# Výpis koeficientů regrese
+print("Koeficient: ", regressor.coef_)
+print("Intercept: ", regressor.intercept_)
 
-# Vykreslení grafu
-plt.scatter(beekeepers_years_counts, beehives_years_counts, color='blue', label='Data')
-plt.plot(beekeepers_years_counts, y_pred, color='red', linewidth=2, label='Lineární regrese')
-plt.xlabel('Počet včelařů')
-plt.ylabel('Počet včelstev')
+# Vytvoření regresní přímky
+regression_line = regressor.predict(beekeepers)
+
+# Vykreslení dat a regresní přímky
+plt.scatter(beekeepers, beehives, color="blue", label="Data")
+plt.plot(beekeepers, regression_line, color="red", label="Lineární regrese")
+plt.xlabel("Počet včelařů")
+plt.ylabel("Počet včelstev")
+plt.title("Lineární regrese mezi počtem včelařů a počtem včelstev")
 plt.legend()
-plt.title('Lineární regrese')
+plt.tight_layout()
 plt.show()
