@@ -45,3 +45,15 @@ Zkoumaná hypotéza je, že ročně se průměr pohybuje na 13 kilogramech na v�
 Jak vidíme, tak nulovou hypotézu nemůžeme zamítnout a podle výsledku můžeme předpokládat, že v průměru se roční výnos na včelstvo pohybujkolem 13 kg. (dle těchto dat)
 
 Pozn. toto je ovšem zavádějící informace, protožrůzné literatury udávají výnos 15-28 kg na včelstvo. Problém bude v typu včelstev, které byly nahlášeny, protože z oddělků se většinou mnoho medu nevytočí a zároveň se mohlo stát, že se někomu vyrojily včely, takže pak také tolik nevytočil. Proto informace, že se vytočí kolem 20 kg na běžné včelstvo, je přijatelná.
+
+### Jaký je vztah mezi počtem včelařů a včelstev?
+Dále jsem ještě vyzkoušel metodu lineární regrese. která se bude dobře aplikovat na již použitou tabulku dat vcelari.csv pro závislost mezi počtem včelařů a včelstev.
+
+Ve skriptu jsem si jen připravil data pro jednotlivé sloupce a pak jsem použil knihovní metodu lineární regrese, která dopočítá koeficienty w = (w1, ..., wp) pro můj model, aby minimalizovala součet druhých mocnin odchylek. 
+
+`regression_line = regressor.predict(beekeepers)`
+
+![Alt text](image-2.png)
+
+Koeficient:  [7.52050455]
+Intercept:  158500.31183429697

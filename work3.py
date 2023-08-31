@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 
@@ -17,6 +16,9 @@ regressor.fit(beekeepers, beehives)
 # Výpis koeficientů regrese
 print("Koeficient: ", regressor.coef_)
 print("Intercept: ", regressor.intercept_)
+
+# Koeficient:  [7.52050455]
+# Intercept:  158500.31183429697
 
 # Vytvoření regresní přímky
 regression_line = regressor.predict(beekeepers)
